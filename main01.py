@@ -1,4 +1,9 @@
-#7669266906:AAE9stnjsufHb1q7_hHVViI4f8PrLGcx9bI
+"""
+Telegram Бот: Рандомайзер рациона "Ложка_бот"
+Автор: Enzhe Akhmetova
+GitHub: https://github.com/enaenaenahm
+Год создания: 2025
+"""
 import logging
 import random
 from aiogram import Bot, Dispatcher, types
@@ -82,22 +87,17 @@ async def start_registration(message: types.Message, state: FSMContext):
 async def process_name(message: types.Message, state: FSMContext):
     if not NAME_REGEX.fullmatch(message.text):
         await message.answer("❌ Имя может содержать только русские/английские буквы, пробелы и дефисы.\nПопробуйте еще раз:")
-        return  # Остаемся в состоянии Registration.name
-    
+        return 
     await state.update_data(name=message.text)
     await message.answer("Введите ваш номер телефона:")
     await state.set_state(Registration.phone)
 
 @dp.message(Registration.phone)
 async def process_phone(message: types.Message, state: FSMContext):
-    # Удаляем все нецифровые символы
     phone = ''.join(filter(str.isdigit, message.text))
-    
-    # Проверяем длину номера
     if len(phone) not in (10, 11) or not phone.isdigit():
         await message.answer("❌ Номер должен содержать 10 или 11 цифр!\nПример: 79876543210\nПопробуйте еще раз:")
-        return  # Остаемся в состоянии Registration.phone
-    
+        return
     await state.update_data(phone=phone)
     await message.answer("Подтвердите согласие на обработку данных (Да/Нет):")
     await state.set_state(Registration.confirm)
