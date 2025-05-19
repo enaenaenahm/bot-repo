@@ -1,8 +1,6 @@
 # Telegram Бот: Рандомайзер рациона "Ложка_бот"
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![Aiogram](https://img.shields.io/badge/Aiogram-3.x-blue)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-db-blue)
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Aiogram](https://img.shields.io/badge/Aiogram-3.x-blue) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-db-blue)
 
 ---
 
