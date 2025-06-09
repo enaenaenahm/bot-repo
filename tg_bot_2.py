@@ -11,7 +11,6 @@ import asyncpg
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
 import re
-import os
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
@@ -19,13 +18,11 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 from datetime import datetime
 from collections import defaultdict
 from aiogram.types import Message
-from PIL import Image
 from datetime import datetime
 from openpyxl import Workbook
 from io import BytesIO
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
-import traceback
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 DB_CONFIG = {
@@ -39,7 +36,7 @@ DB_CONFIG = {
 NAME_REGEX = re.compile(r'^[A-Za-zА-Яа-яЁё\s\-]+$')
 
 logging.basicConfig(level=logging.INFO)
-API_TOKEN = "8130078332:AAG5ISPKao2NGXD5TzrU1nNAdiIeZO_1wPs"
+API_TOKEN = "API"
 
 bot = Bot(token=API_TOKEN)
 storage = MemoryStorage()
@@ -233,7 +230,7 @@ async def start(message: types.Message):
             "✨ Полный доступ к большой базе рецептов\n"
             "📅 Меню на день и неделю станет действительно разнообразным — больше рецептов, больше комбо, никакой повторяющейся еды\n\n"
             "Готов пробовать? Начни с бесплатной версии — уже сейчас ты можешь собрать *Рацион* и посмотреть, как это удобно!\n"
-            "А когда захочешь больше — оформить подписку можно всего в два клика прямо в разделе *Услуги* 🙌"
+            "А когда захочешь больше — оформить подписку можно всего в два клика прямо в разделе Услуги 🙌"
         )
     await message.answer(text, reply_markup=await main_kb(is_registered))
 

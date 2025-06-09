@@ -38,7 +38,7 @@ aiogram==3.3.0
 **Запуск:**
 
 ```txt
-python main01.py
+python3 tg_bot_1.py
 ```
 
 ### Этап 2: Расширенный бот с БД и Excel (`main02.py`)
@@ -52,7 +52,7 @@ python main01.py
 * Поддержка подписокs
 * Inline-кнопки, переключение меню
 * Поддержка эксперта по питанию
-* Работа с сервером
+* Работа с сервером Timeweb
 
 **Зависимости:**
 
@@ -60,14 +60,13 @@ python main01.py
 aiogram==3.3.0
 asyncpg==0.29.0
 openpyxl==3.1.2
-Pillow==10.2.0
 python-dotenv==1.0.1
 ```
 
-**Запуск:**
+**Запуск:** 
 
 ```txt
-python main02.py
+python tg_bot_2.py
 ```
 
 ## Используемые технологии:
@@ -75,6 +74,5 @@ python main02.py
 * [Aiogram 3]()
 * PostgreSQL (через `asyncpg`)
 * Excel через `openpyxl`
-* Обработка изображений — `PIL`
 * FSM и кастомные кнопки
 * VPS-сервер Timeweb
